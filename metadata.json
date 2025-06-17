@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TRANSCOM_RM_0001",
+    "tvod": false,
+    "license_start": "2025-04-24T00:00:01+01:00",
+    "license_end": "2030-01-01T00:00:01+01:00",
+    "name": "Uma Vida Oculta",
+    "subname": "A Hidden Life",
+    "offline_playback": true,
+    "deinterlacing": true,
+    "description": "A história do austríaco Franz Jägerstätter, um objetor de consciência que se recusou a lutar pelos nazistas durante a Segunda Guerra Mundial e acabou sendo executado por eles em 1943. Franz foi declarado mártir e beatificado pela Igreja.",
+    "rating": 14,
+    "groups": [
+      119
+    ],
+    "genres": [
+      "Biografia",
+      "Drama"
+    ],
+    "actors": [
+      "August Diehl",
+      "Matthias Schoenaerts",
+      "Valerie Pachner",
+      "Michael Nyqvist",
+      "Jürgen Prochnow",
+      "Bruno Ganz",
+      "Martin Wuttke",
+      "Karl Markovics",
+      "Franz Rogowski",
+      "Tobias Moretti",
+      "Florian Schwienbacher"
+    ],
+    "location": "pasta_hipotetico\\1.mp4"
+  },
+  {
+    "id": "TRANSCOM_RM_0002",
+    "tvod": true,
+    "license_start": "2025-05-01T00:00:00+01:00",
+    "license_end": "2030-12-31T23:59:59+01:00",
+    "name": "O Caminho da Liberdade",
+    "subname": "The Way of Freedom",
+    "offline_playback": false,
+    "deinterlacing": true,
+    "description": "Em meio a uma ditadura opressora, um grupo de jovens decide lutar pela liberdade, enfrentando perigos, dilemas morais e perdas pessoais ao longo do caminho.",
+    "rating": 16,
+    "groups": [
+      121,
+      130
+    ],
+    "genres": [
+      "Drama",
+      "Histórico",
+      "Aventura"
+    ],
+    "actors": [
+      "João Pedro Martins",
+      "Ana Clara Souza",
+      "Rodrigo Santoro",
+      "Alice Braga",
+      "Selton Mello",
+      "Wagner Moura",
+      "Fernanda Montenegro"
+    ],
+    "location": "pasta_hipotetico_2\\1.mp4"
+  }
+]
