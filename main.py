@@ -1,13 +1,46 @@
 import os
 import json
+from PIL import Image
 
 pastas_docs = [p for p in os.listdir() if os.path.isdir(p)]
 lista_metadata = []
 raw_string = "/home/youcast/Videos/Videos_Housi/Arquivos_Mobile/"
 
+
+def acha_video(path : str): 
+    arquivos = os.listdir(path)
+    for arquivo in arquivos:
+        if (arquivo.endswith(".mp4")):
+            return arquivo
+
+def acha_imagem_wide(path : str):
+    arquivo_grande = ""
+    arquivo_normal = ""
+    
+    arquivos = os.listdir(path)
+    for arquivo in arquivos:
+        if (arquivo.endswith(".jpg") or arquivo.endswith(".png")):
+            print(os.path.join(path, arquivo))
+            im = Image.open(os.path.join(path, arquivo))
+            width, height = im.size
+            if (width > 1200):
+                arquivo_grande = arquivo
+            else:
+                arquivo_normal = arquivo
+    return arquivo_grande, arquivo_normal
+                
+            
+        
+
 for pasta in pastas_docs:
     caminho_metadata = os.path.join(pasta, "metadata.json")
-    video_local = os.path.join(pasta, "1.mp4")
+    
+    ''' ACHA VIDEO + IMAGEM + IMAGEM_WIDE'''
+    
+    ''' A PASTA É PASTA CACETE '''
+
+    video_local = acha_video(pasta)
+    imagem_wide, imagem_normal = acha_imagem_wide(pasta)
 
     if os.path.exists(caminho_metadata):
         with open(caminho_metadata, "r+", encoding="utf-8") as f:
@@ -17,10 +50,12 @@ for pasta in pastas_docs:
                     dados = {}
             except json.JSONDecodeError:
                 dados = {}
+                
+            print(f'{video_local} - {imagem_normal} - {imagem_wide}')
 
-            dados["location"] = raw_string + os.path.join(pasta, "1.mp4")
-            dados["coverwide"] = raw_string + os.path.join(pasta ,"2.png")
-            dados["cover"] = raw_string + os.path.join(pasta ,"1.png")
+            dados["location"] = raw_string + video_local
+            dados["coverwide"] = raw_string + imagem_wide
+            dados["cover"] = raw_string + imagem_normal
             f.seek(0)
             f.truncate()
             json.dump(dados, f, indent=2, ensure_ascii=False)
