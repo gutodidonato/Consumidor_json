@@ -3,6 +3,7 @@ import json
 
 pastas_docs = [p for p in os.listdir() if os.path.isdir(p)]
 lista_metadata = []
+raw_string = "../../../Videos/Videos_Housi/Arquivos_Mobile/"
 
 for pasta in pastas_docs:
     caminho_metadata = os.path.join(pasta, "metadata.json")
@@ -17,7 +18,9 @@ for pasta in pastas_docs:
             except json.JSONDecodeError:
                 dados = {}
 
-            dados["location"] = video_local
+            dados["location"] = raw_string + os.path.join(pasta, "1.mp4")
+            dados["coverwide"] = raw_string + os.path.join(pasta ,"2.png")
+            dados["cover"] = raw_string + os.path.join(pasta ,"1.png")
             f.seek(0)
             f.truncate()
             json.dump(dados, f, indent=2, ensure_ascii=False)
