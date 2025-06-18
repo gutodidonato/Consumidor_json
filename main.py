@@ -4,7 +4,7 @@ from PIL import Image
 
 pastas_docs = [p for p in os.listdir() if os.path.isdir(p)]
 lista_metadata = []
-raw_string = "/arquivos/"
+raw_string = "https://monitoringv2.youcast.tv.br/arquivos/"
 
 
 def acha_video(path : str): 
