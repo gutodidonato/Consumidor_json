@@ -3,7 +3,7 @@ import json
 
 pastas_docs = [p for p in os.listdir() if os.path.isdir(p)]
 lista_metadata = []
-raw_string = "../../../Videos/Videos_Housi/Arquivos_Mobile/"
+raw_string = "/home/youcast/Videos/Video_Mobile/"
 
 for pasta in pastas_docs:
     caminho_metadata = os.path.join(pasta, "metadata.json")
