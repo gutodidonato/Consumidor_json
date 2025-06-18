@@ -1,0 +1,1 @@
+app.use('/arquivos', express.static('/home/youcast/Videos/Videos_Housi/Arquivos_Mobile'));
