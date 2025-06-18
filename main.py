@@ -53,9 +53,10 @@ for pasta in pastas_docs:
                 
             print(f'{video_local} - {imagem_normal} - {imagem_wide}')
 
-            dados["location"] = raw_string + video_local
-            dados["coverwide"] = raw_string + imagem_wide
-            dados["cover"] = raw_string + imagem_normal
+            dados["location"] = raw_string  + pasta + '/' +  video_local
+            dados["coverwide"] = raw_string  + pasta + '/' + imagem_wide
+            dados["cover"] = raw_string + pasta + '/' + imagem_normal
+            
             f.seek(0)
             f.truncate()
             json.dump(dados, f, indent=2, ensure_ascii=False)
